@@ -1,0 +1,140 @@
+/* إعدادات عامة */
+body{
+    margin:0;
+    padding:0;
+    background:#2b2722; /* خلفية داكنة */
+    font-family:"Tajawal",sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* طبقة تغميق لإبراز النص */
+body::before{
+    content:"";
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.45);
+    z-index:0;
+}
+
+/* ================================
+     خلفية سلايد شو – 3 صور
+================================ */
+.slideshow img{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    opacity:0;
+    animation:slide 18s infinite;
+    filter:grayscale(75%);
+}
+
+.slideshow img:nth-child(1){ animation-delay:0s; }
+.slideshow img:nth-child(2){ animation-delay:6s; }
+.slideshow img:nth-child(3){ animation-delay:12s; }
+
+@keyframes slide{
+    0%{opacity:0;}
+    10%{opacity:0.32;}
+    30%{opacity:0.32;}
+    40%{opacity:0;}
+    100%{opacity:0;}
+}
+
+/* ================================
+     اللوقو الخلفي الكبير
+================================ */
+.big-logo{
+    position:fixed;
+    top:50%; left:50%;
+    transform:translate(-50%, -50%);
+    width:88%;
+    max-width:900px;
+    opacity:0.16;
+    z-index:1;
+    filter:contrast(150%) brightness(90%);
+}
+
+/* ================================
+     اللوقو العلوي
+================================ */
+.logo{
+    width:210px;
+    margin:40px auto 20px;
+    z-index:5;
+    position:relative;
+}
+
+/* ================================
+       العنوان والترحيب
+================================ */
+.header-title{
+    font-size:44px;
+    font-weight:700;
+    color:#D9C7A5;
+    margin-top:10px;
+    position:relative;
+    z-index:5;
+    text-shadow:0px 2px 6px rgba(0,0,0,0.55);
+}
+
+.header-sub{
+    width:85%;
+    margin:12px auto 35px;
+    font-size:20px;
+    line-height:1.9;
+    color:#D9C7A5;
+    z-index:5;
+    position:relative;
+    text-shadow:0px 2px 5px rgba(0,0,0,0.55);
+}
+
+/* ================================
+       أيقونات التواصل – عامودي
+================================ */
+.icons{
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    margin-top:20px;
+    z-index:5;
+    position:relative;
+}
+
+.icons a{
+    font-size:42px;
+    color:#D9C7A5;
+    transition:0.25s;
+}
+
+.icons a:hover{
+    transform:scale(1.18);
+    color:#f1dcb8; /* درجة ألمع عند اللمس */
+}
+
+/* ================================
+            الخريطة
+================================ */
+.map-container{
+    width:90%;
+    max-width:600px;
+    margin:55px auto;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 0 18px rgba(0,0,0,0.35);
+    position:relative;
+    z-index:5;
+}
+
+/* ================================
+            الفوتر
+================================ */
+.footer{
+    margin:25px 0 35px;
+    font-size:15px;
+    color:#D9C7A5;
+    z-index:5;
+    position:relative;
+}
